@@ -18,7 +18,9 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paciente-edicion.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { MatInputModule } from '@angular/material/input';
     PacienteComponent,
     MedicoComponent,
     EspecialidadComponent,
-    ConsultaComponent
+    ConsultaComponent,
+    PacienteEdicionComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,9 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
