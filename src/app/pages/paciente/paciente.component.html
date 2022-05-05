@@ -1,0 +1,57 @@
+<div class="example-header">
+    <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar paciente">
+    </mat-form-field>
+</div>
+<div class="tbl">
+<table mat-table [dataSource]="datasource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="nombres">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Nombres</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.name}}</th>
+    </ng-container>
+    <ng-container matColumnDef="apellidos">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.lastname}}</th>
+    </ng-container>
+    <ng-container matColumnDef="dni">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Cédula</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.dni}}</th>
+    </ng-container>
+    <ng-container matColumnDef="address">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Dirección</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.address}}</th>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.phone}}</th>
+    </ng-container>
+    <ng-container matColumnDef="age">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Edad</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.age}}</th>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Género</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.gender}}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+            <th class="col" mat-header-cell *matHeaderCellDef> Acciones</th>
+            <td class="col" mat-cell *matCellDef="let element">
+                <button mat-button color="primary" >
+                    <mat-icon>ballot</mat-icon>
+                </button>
+                <button mat-button color="primary" >
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <!-- [routerLink]="['edicion',element.id_patient]"
+(click)="eliminar(element.id_patient)" -->
+            </td>
+        </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    
+
+</table>
+</div>

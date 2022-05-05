@@ -1,0 +1,17 @@
+.mat-form-field{
+    font-size: 14px;
+    width: 40%;
+}
+.tbl{
+    padding-left: 200px;
+}
+table{
+    width: 80%;
+}
+.col{
+    text-align: center;
+}
+.example-header{
+    padding-top: 50px;
+    text-align: center;
+}
