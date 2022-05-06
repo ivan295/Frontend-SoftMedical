@@ -34,6 +34,7 @@ export class PacienteComponent implements OnInit {
       this.datasource = new MatTableDataSource(data);
     });
   }
+  
   filtrar(e: any){
     this.datasource.filter = e.target.value.trim().toLowerCase();
   }

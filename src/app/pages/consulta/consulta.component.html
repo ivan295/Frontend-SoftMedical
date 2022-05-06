@@ -1,1 +1,29 @@
-<p>consulta works!</p>
+
+<mat-toolbar style="text-align: center;">Registro de Consulta</mat-toolbar>
+
+<div class="example-container">
+    <br>
+    <mat-form-field>
+    <mat-select placeholder="Seleccionar paciente" [(ngModel)]="idPacienteSeleccionado">
+        <mat-option *ngFor="let p of pacientes" [value]="p.id_patient">{{p.name}} {{p.lastname}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <mat-select placeholder="Seleccionar Medico" [(ngModel)]="idMedicoSeleccionado">
+        <mat-option *ngFor="let m of medicos" [value]="m.id_doctor">{{m.name}} {{m.lastname}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <mat-select placeholder="Seleccionar Especialidad" [(ngModel)]="idEspecialidadSeleccionado">
+        <mat-option *ngFor="let e of especialidades" [value]="e.id_speciality">{{e.description}}</mat-option>
+    </mat-select>
+</mat-form-field> 
+<br>
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Numero de sala" required [(ngModel)]="sala" type="number">
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="registrarConsulta()">Registrar</button>
+</div>

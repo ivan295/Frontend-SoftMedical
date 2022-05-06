@@ -1,0 +1,29 @@
+<form class="example-container" [formGroup]="form" #frmDoctor="ngForm" (ngSubmit)="operar()">
+    <br>
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombres" required formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Apellidos" required formControlName="apellido">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Cédula" required formControlName="dni">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="cmp" required formControlName="cmp">
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmDoctor.invalid">
+        <mat-icon>done</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" routerLink="/medico" type="button">
+        <mat-icon>close</mat-icon>
+        <span>cancelar</span>
+    </button>
+</form> 

@@ -1,1 +1,45 @@
-<p>medico works!</p>
+<router-outlet></router-outlet>
+<div class="btn_add">
+    <button mat-flat-button style="float: left" color="accent" routerLink="/medico/nuevo"><mat-icon>add</mat-icon> Agregar Medico</button>
+    </div>  
+<div class="example-header">
+    <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar medico">
+    </mat-form-field>
+</div>
+<div class="tbl">
+<table mat-table [dataSource]="datasource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="nombres">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Nombres</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.name}}</th>
+    </ng-container>
+    <ng-container matColumnDef="apellidos">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.lastname}}</th>
+    </ng-container>
+    <ng-container matColumnDef="dni">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> Cédula</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.dni}}</th>
+    </ng-container>
+    <ng-container matColumnDef="cmp">
+        <th class="col" mat-header-cell *matHeaderCellDef mat-sort-header> CMP</th>
+        <th class="col" mat-cell *matCellDef="let element">{{element.cmp}}</th>
+    </ng-container>
+    
+    <ng-container matColumnDef="acciones">
+            <th class="col" mat-header-cell *matHeaderCellDef> Acciones</th>
+            <td class="col" mat-cell *matCellDef="let element">
+                <button mat-button color="primary" [routerLink]="['edicion',element.id_doctor]">
+                    <mat-icon>ballot</mat-icon>
+                </button>
+                <button mat-button color="primary" (click)="eliminar(element.id_doctor)" type="button">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+    
+</div>

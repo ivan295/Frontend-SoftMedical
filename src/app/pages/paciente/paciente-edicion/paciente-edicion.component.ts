@@ -14,6 +14,7 @@ export class PacienteEdicionComponent implements OnInit {
   form:FormGroup;
   id:number;
   edicion:boolean;
+  
   constructor(
     private route:ActivatedRoute,//tomar la url activa
     private pacienteService: PacienteService,
@@ -75,10 +76,10 @@ export class PacienteEdicionComponent implements OnInit {
       });
     }else{
       //registrar
-      this.pacienteService.registrarPacientes(paciente).subscribe(()=>{
-        this.pacienteService.listarPacientes().subscribe(data=>{
-          this.pacienteService.pacienteCambio.next(data);
-          this.pacienteService.mensajeCambio.next('Información Registrada');
+      this.pacienteService.registrarPacientes(paciente).subscribe(()=>{ //envio de datos a la funcion registrar
+        this.pacienteService.listarPacientes().subscribe(data=>{ // llamo a la funcion listar 
+          this.pacienteService.pacienteCambio.next(data); // activo el pacienteCambio 
+          this.pacienteService.mensajeCambio.next('Información Registrada'); // ejecuto el mensaje
         });
       });
     }

@@ -27,11 +27,15 @@
         <span>Especialidad</span>
       </button>
       <mat-divider></mat-divider>
-      <button mat-menu-item (click)="sidenav.toggle()" routerLink="#" style="cursor: pointer">
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta" style="cursor: pointer">
         <mat-icon>filter_none</mat-icon>
         <span>Consultas</span>
       </button>
-      
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta_registradas" style="cursor: pointer">
+        <mat-icon>filter_none</mat-icon>
+        <span>Consultas Registradas</span>
+      </button>
     </mat-sidenav>
 
     <mat-sidenav-content>
