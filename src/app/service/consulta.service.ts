@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Consulta } from '../model/consulta';
 
 @Injectable({
@@ -8,16 +9,18 @@ import { Consulta } from '../model/consulta';
 })
 export class ConsultaService {
 
+  private url:string = `${environment.HOST}/consulta`;
+
   constructor(
     private http: HttpClient
   ) { }
 
     registrarConsulta(consulta:Consulta){
-      return this.http.post('http://localhost:8080/consulta',consulta);
+      return this.http.post(this.url,consulta);
     }
 
     listarConsultas(): Observable<Consulta[]>{
-      return this.http.get<Consulta[]>('localhost:8080/consulta');
+      return this.http.get<Consulta[]>(this.url);
     }
 
 }

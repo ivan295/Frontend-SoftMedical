@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./paciente.component.css']
 })
 export class PacienteComponent implements OnInit {
-
+ 
   datasource:MatTableDataSource<Paciente>;
   displayedColumns: string[]=['nombres','apellidos','dni','address','phone','age','gender','acciones'];
 

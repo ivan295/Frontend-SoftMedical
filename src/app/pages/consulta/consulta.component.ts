@@ -51,7 +51,7 @@ export class ConsultaComponent implements OnInit {
 
     let pacienteobj = new Paciente();
     pacienteobj.id_patient = this.idPacienteSeleccionado;
-
+    
     let specialityobj = new Speciality();
     specialityobj.id_speciality =this.idEspecialidadSeleccionado;
 
@@ -60,7 +60,7 @@ export class ConsultaComponent implements OnInit {
     consulta.patient=pacienteobj;
     consulta.speciality=specialityobj;
     consulta.num_sala = this.sala;
-     console.log(consulta);
+     //console.log(consulta);
 
     this.consultserv.registrarConsulta(consulta).subscribe(()=>{
     this.snackbar.open('Datos registrados','Aviso',{duration:4000});
